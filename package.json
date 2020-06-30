@@ -8,6 +8,7 @@
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "4.2.2",
     "babel-loader": "^8.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -40,5 +41,7 @@
     "url": "https://github.com/sjpk1223/benchbnb2/issues"
   },
   "homepage": "https://github.com/sjpk1223/benchbnb2#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.0"
+  }
 }

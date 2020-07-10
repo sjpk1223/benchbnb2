@@ -8,6 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const store = configureStore();
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    ReactDOM.render(<h1>Welcome to BenchBnB!</h1>, root);
+    ReactDOM.render(<Root store={store} /> , root);
 });
 

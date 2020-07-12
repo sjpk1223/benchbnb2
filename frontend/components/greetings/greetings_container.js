@@ -1,21 +1,16 @@
-//  Presentational components are concerned with how things look 
-// and container components are concerned with how things work.
-
 import { connect } from 'react-redux';
-import { createNewUser, login, logout } from '../../session_actions' // action creator
-import Greetings from '../greetings'; // presentational component to connect
+import { logout } from '../../actions/session_actions';
+import Greetings from './greetings';
 
-const mapStateToProps = (state) => ({ // map slice of state to props object
-    items: state.items
+const mapStateToProps = ( state ) => ({
+    currentUser: state.entities.users[state.session.id]
 });
 
-const mapDispatchToProps = (dispatch) => ({ // create action dispatcher
-    resetItems: () => dispatch(resetItems());
+const mapDispatchToProps = dispatch => ({
+    logout: () => dispatch(logout())
 });
 
-const GreetingsContainer = connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(Greetings);
-
-export default ListContainer;

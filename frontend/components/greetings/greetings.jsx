@@ -17,6 +17,7 @@ class Greetings extends React.Component{
     }
 
     render(){
+        debugger
         const { currentUser, logout } = this.props;
         const display = currentUser ? (
             <div>

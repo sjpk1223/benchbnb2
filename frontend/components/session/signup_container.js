@@ -1,9 +1,14 @@
 import { connect } from 'react-redux';
 import { createNewUser } from '../../actions/session_actions';
-import Signup from './signup';
+import SessionForm from './session_form'
+
 
 const mapDispatchToProps = dispatch => ({
-    createNewUser: formUser => dispatch(createNewUser(formUser)),
+    processform: formUser => dispatch(createNewUser(formUser)),
 });
 
-export default connect(null, mapDispatchToProps)(Signup);
+const msp = state => ({
+    formtype: 'createNewUser',
+})
+
+export default connect(msp, mapDispatchToProps)(SessionForm);

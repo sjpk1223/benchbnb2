@@ -8,7 +8,7 @@ const App = () => (
         <header>
             <Route path='/' component={GreetingsContainer} />
             <Route path='/signup' component={SignupContainer} />
-            <Route path='/login' component={SignupContainer} />
+            <Route path='/login' component={LoginContainer} />
         </header>
     </div>
 );

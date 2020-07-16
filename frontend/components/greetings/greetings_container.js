@@ -3,7 +3,7 @@ import { logout, login, createNewUser } from '../../actions/session_actions';
 import Greetings from './greetings';
 
 const mapStateToProps = ( state ) => ({
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.user[state.session.id]
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,8 +1,9 @@
 class Api::UsersController < ApplicationController
     
     def create
+        # new creates object, create updates db while creating object
         @user = User.new(user_params)
-
+        debugger
         if @user.save
             login!(@user)
             render "api/users/show"
@@ -13,6 +14,6 @@ class Api::UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:username, :password)
+        params.require(:user).permit(:username, :password, :email)
     end
 end

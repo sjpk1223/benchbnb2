@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 //constructor and render
 class Greetings extends React.Component{
@@ -13,12 +13,13 @@ class Greetings extends React.Component{
         // frontend state & backend state are not the same!
         return (e) => {
             e.preventDefault();
+            alert("im working");
+            // this.props.redirect(type);
         }
     }
 
     render(){
-        debugger
-        const { currentUser, logout } = this.props;
+        const { currentUser, logout, login, createNewUser } = this.props;
         const display = currentUser ? (
             <div>
                 <p>Hello, {currentUser.username}</p>
@@ -26,12 +27,14 @@ class Greetings extends React.Component{
             </div>
         ) : (
                 <>
-                    <button onClick={this.handleSubmit("login")} >
+                    {/* <button onClick={this.handleSubmit(login)} >
                         Log In
-        </button>
-                    <button onClick={this.handleSubmit("signup")} >
+        </button> */}
+        <Link to="/login">Log In</Link>
+        <Link to="/signup">Sign Up</Link>
+                    {/* <button onClick={this.handleSubmit(createNewUser)} >
                         Sign Up
-        </button>
+        </button> */}
                 </>
             );
         return (

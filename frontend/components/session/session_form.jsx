@@ -50,7 +50,6 @@ render (){
                 <label>
                     Password:
                 <input
-                        className="modal-textbox"
                         type="password"
                         // value={this.state.password}
                         // jsx/react method, whenever we change value it will call handleinput

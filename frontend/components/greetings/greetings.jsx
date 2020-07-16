@@ -5,21 +5,21 @@ import { Link } from 'react-router-dom';
 class Greetings extends React.Component{
     constructor(props){
         super(props)
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(type) {
-        //default action for a button in a form will send post request whcih will cause th page to re-render
-        // frontend state & backend state are not the same!
-        return (e) => {
-            e.preventDefault();
-            alert("im working");
-            // this.props.redirect(type);
-        }
-    }
+    // handleSubmit(type) {
+    //     //default action for a button in a form will send post request whcih will cause th page to re-render
+    //     // frontend state & backend state are not the same!
+    //     return (e) => {
+    //         e.preventDefault();
+    //         alert("im working");
+    //         // this.props.redirect(type);
+    //     }
+    // }
 
     render(){
-        const { currentUser, logout, login, createNewUser } = this.props;
+        const { currentUser, logout } = this.props;
         const display = currentUser ? (
             <div>
                 <p>Hello, {currentUser.username}</p>

@@ -5,7 +5,7 @@ import Greetings from './greetings';
 const mapStateToProps = ( state ) => {
     debugger
     return ({
-        currentUser: state.entities.user[state.session.currentUser.id]
+        currentUser: state.session.currentUser
     });
 
 }
@@ -14,7 +14,6 @@ const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),
     login: (user) => dispatch(login(user)),
     createNewUser: (formUser) => dispatch(createNewUser(formUser)),
-    // redirect: (type) => dispatch(redirect(type))
 });
 
 export default connect(

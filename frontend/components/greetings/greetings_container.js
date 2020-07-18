@@ -3,7 +3,6 @@ import { logout, login, createNewUser } from '../../actions/session_actions';
 import Greetings from './greetings';
 
 const mapStateToProps = ( state ) => {
-    debugger
     return ({
         currentUser: state.session.currentUser
     });

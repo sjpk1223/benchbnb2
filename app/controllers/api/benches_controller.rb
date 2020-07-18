@@ -1,5 +1,6 @@
 class Api::BenchesController < ApplicationController
   def index
+    @bench = Bench.all
     render "api/benches/show"
   end
 

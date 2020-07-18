@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchBenches } from '../actions/benches_actions';
+import { getBenches } from '../../actions/benches_actions';
 import  BenchIndex  from './bench_index';
 
 const msp = (state) => ({
@@ -7,7 +7,7 @@ const msp = (state) => ({
 });
 
 const mdp = (dispatch) => ({
-    fetchBenches: () => dispatch(fetchBenches())
+    fetchBenches: () => dispatch(getBenches())
 });
 
 export default connect(msp,mdp)(BenchIndex);

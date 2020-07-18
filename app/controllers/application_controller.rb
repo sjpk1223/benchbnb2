@@ -22,5 +22,4 @@ helper_method :logged_in?, :current_user, :ensure_logged_in
         session[:session_token] = nil
         @current_user = nil
     end
-    
 end

@@ -34,8 +34,8 @@ export const AuthRoute = withRouter(
     )(Auth)
 );
 
-export const ProtectedRoute = withRouter(
-    connect(
-        (mapStateToProps)(Protected)
-    )
-);
+// export const ProtectedRoute = withRouter(
+//     connect(
+//         (mapStateToProps)(Protected)
+//     )
+// );

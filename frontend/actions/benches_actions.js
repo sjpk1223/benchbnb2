@@ -2,12 +2,12 @@ import {
     fetchBenches
 } from '../util/bench_api_util'
 
-export const FETCH_BENCH = "FETCH_BENCH"
+export const RECEIVE_BENCHES = "RECEIVE_BENCHES"
 
-const receiveBench = (bench) => ({
-    type: FETCH_BENCH,
-    bench: bench
+const receiveBenches = (benches) => ({
+    type: RECEIVE_BENCHES,
+    benches: benches
 })
 
-export const fetchBench = () => dispatch => fetchBenches(benchId)
-.then(bench => dispatch(receiveBench(bench)));
+export const fetchBenches = () => dispatch => fetchBenches(benchId)
+.then(bench => dispatch(receiveBenches(bench)));

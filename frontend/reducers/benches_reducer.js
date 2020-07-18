@@ -1,19 +1,13 @@
-import {
-    FETCH_BENCH
-} from '../actions/benches_actions'
+import { RECEIVE_BENCHES } from "../actions/bench_actions";
 
-const _nullBench = {
-    bench: null
-};
-
-const benchesReducer = ( state = _nullBench, action) => {
+const benchesReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
-        case FETCH_BENCH:
-            return Object.assign({}, { bench: action.bench.id });
-            default:
-                return state;
+        case RECEIVE_BENCHES:
+            return action.benches;
+        default:
+            return state;
     }
-}
+};
 
 export default benchesReducer;

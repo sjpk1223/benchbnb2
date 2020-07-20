@@ -1,18 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-// class BenchIndex extends React.Component{
-//     constructor(props){
-//         super(props)
-//     }
-
-//     render(){
-//         const { fetchBenches } = this.props;
-//         return (
-//             <></>
-//         )
-//     }
-// }
+import BenchIndexItem from './bench_index_item';
+import bench_index_container from './bench_index_container';
 
 class BenchIndex extends React.Component {
     constructor(props){
@@ -22,17 +11,16 @@ class BenchIndex extends React.Component {
         // this.componentDidMount = this.componentDidMount.bind(this);
     }
     componentDidMount() {
-        // request benches from your API here
-        const benches = this.props.fetchBenches();
-        // this.setState 
+        this.props.fetchBenches();
     }
 
     render() {
-        // const benches = this.props.fetchBenches();
         return (
+            <>
             <div>
         
             </div>
+            </>
         )
     }
 }

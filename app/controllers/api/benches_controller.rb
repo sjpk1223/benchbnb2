@@ -1,7 +1,7 @@
 class Api::BenchesController < ApplicationController
   def index
-    @bench = Bench.all
-    render "api/benches/show"
+    @benches = Bench.all
+    render "api/benches/index"
   end
 
   def create

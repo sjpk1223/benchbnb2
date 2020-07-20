@@ -1,1 +1,0 @@
-json.partial! "api/benches/bench", benches: @benches

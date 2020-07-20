@@ -6,20 +6,15 @@ import bench_index_container from './bench_index_container';
 class BenchIndex extends React.Component {
     constructor(props){
         super(props);
-        // this.state = {
-        // }
-        // this.componentDidMount = this.componentDidMount.bind(this);
     }
     componentDidMount() {
         this.props.fetchBenches();
     }
 
     render() {
+        const { benches } = this.props;
         return (
             <>
-            <div>
-        
-            </div>
             </>
         )
     }

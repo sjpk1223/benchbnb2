@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 //constructor and render
 class Greetings extends React.Component{
     constructor(props){
-        super(props)
+        super(props);
         // this.handleSubmit = this.handleSubmit.bind(this);
     }
 

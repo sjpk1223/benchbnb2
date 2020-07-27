@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const store = configureStore(preloadedState);
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.fetchBenches = getBenches();
+    window.fetchBenches = getBenches;
     ReactDOM.render(<Root store={store} /> , root);
 });
 

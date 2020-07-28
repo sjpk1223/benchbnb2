@@ -13,9 +13,9 @@ class BenchIndexItem extends React.Component {
     }
 
     render() {
+        debugger
         return (
-            <div>
-            </div>
+        <li>{this.props.bench.description}</li>
         )
     }
 }

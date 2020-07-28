@@ -11,3 +11,4 @@ const receiveBenches = (benches) => ({
 
 export const getBenches = () => dispatch => fetchBenches()
 .then(benches => dispatch(receiveBenches(benches)));
+

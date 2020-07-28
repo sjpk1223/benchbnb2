@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import BenchIndexItem from './bench_index_item';
 
+
 class BenchIndex extends React.Component {
     constructor(props){
         super(props);
@@ -13,7 +14,9 @@ class BenchIndex extends React.Component {
     }
 
     render() {
+        debugger
         const benchCount = Object.keys(this.props.benches).length;
+
         // const benches  = this.props.benches;
         // saved LI array form to display between UL tag 
         // so it makes it into bullet point format

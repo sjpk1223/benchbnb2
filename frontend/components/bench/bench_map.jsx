@@ -8,7 +8,7 @@ class BenchMap extends React.Component{
     render() {
         return (
             <div id='map-container' ref='map'>
-
+                <h1>working</h1>
             </div>
         )
     }

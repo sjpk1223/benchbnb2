@@ -13,7 +13,7 @@ class Search extends React.Component {
         return (
             <div>
                 
-                <BenchMap />
+                <BenchMap benches={benches} />
                 <BenchIndex fetchBenches={fetchBenches} benches={benches} /> 
             </div>
         )

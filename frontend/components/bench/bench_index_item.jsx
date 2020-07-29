@@ -13,7 +13,7 @@ class BenchIndexItem extends React.Component {
     }
 
     render() {
-        debugger
+       
         return (
         <li>{this.props.bench.description}</li>
         )

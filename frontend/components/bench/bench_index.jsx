@@ -14,7 +14,7 @@ class BenchIndex extends React.Component {
     }
 
     render() {
-        debugger
+    
         const benchCount = Object.keys(this.props.benches).length;
 
         // const benches  = this.props.benches;

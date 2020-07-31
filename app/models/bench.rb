@@ -7,9 +7,9 @@ class Bench < ApplicationRecord
     
     def self.in_bounds(bounds)
         self.where("lat < ?", bounds[:northEast][:lat])
+        .where("lng < ?", bounds[:northEast][:lng])
         .where("lat > ?", bounds[:southWest][:lat])
         .where("lng > ?", bounds[:southWest][:lng])
-        .where("lng < ?", bounds[:northEast][:lng])
     end
 
       # google map bounds will be in the following format:

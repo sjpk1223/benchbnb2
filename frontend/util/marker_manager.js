@@ -7,24 +7,22 @@ export default class MarkerManager {
     }
 
     createMarkerFromBench(bench) {
-        debugger
         new google.maps.Marker({
             position: {lat: bench.lat , lng: bench.lng},
             map: this.map,
             title: bench.description
-            });
+            });this.createMarkerFromBench
 
 
     }
 
     updateMarkers(benches) {
         const benchId = Object.keys(benches);
-        debugger
         benchId.forEach(id => {
             let newMarker = this.createMarkerFromBench(benches[id]);
             this.markers[id] = newMarker;
         })
-        // debugger
+
         // for (benchId in benches){
         //     if (this.markers[benchId]){
         //         let newMarker = createMarkerFromBench(bench);

@@ -1,8 +1,10 @@
-export const fetchBenches = () => {
+export const fetchBenches = (filters) => {
+    debugger
     return $.ajax({
         method: 'GET' ,
             url: '/api/benches',
-        error: (err) => console.log(err)
+        error: (err) => console.log(err),
+        filters
     })
 }
 

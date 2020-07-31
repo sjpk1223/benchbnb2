@@ -3,7 +3,7 @@ class Api::BenchesController < ApplicationController
     # @benches = bounds ? Bench.in_bounds(params[:bounds]) : Bench.all
     debugger
     @benches = params[:filters] ? Bench.in_bounds(params[:filters]) : Bench.all
-    
+    debugger
     render "api/benches/index"
   end
 
@@ -17,7 +17,7 @@ class Api::BenchesController < ApplicationController
   def benches_params
     params.require(:benches).permit(:lat,
       :lng,
-      :description)
+      :description, :filters)
   end
 
 end

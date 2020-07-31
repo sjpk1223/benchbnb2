@@ -1,6 +1,6 @@
 export const UPDATE_BOUNDS = "UPDATE_BOUNDS"
 
-const updateBounds = (bounds) => ({
+export const updateBounds = (bounds) => ({
     type: UPDATE_BOUNDS,
     bounds
 })

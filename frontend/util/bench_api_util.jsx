@@ -1,10 +1,9 @@
-export const fetchBenches = (filters) => {
-    debugger
+export const fetchBenches = (bounds) => {
     return $.ajax({
         method: 'GET' ,
-            url: '/api/benches',
+        url: '/api/benches',
         error: (err) => console.log(err),
-        filters
+        data: { bounds }
     })
 }
 
@@ -15,3 +14,6 @@ export const fetchBenches = (filters) => {
 //         data: {bench}
 //     })
 // )
+
+
+// let bounds = { northEast: { lat: '100', lng: '100' }, southWest: { lat: '-100', lng: '-100'}}

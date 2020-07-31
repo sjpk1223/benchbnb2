@@ -1,9 +1,8 @@
 class Api::BenchesController < ApplicationController
   def index
     # @benches = bounds ? Bench.in_bounds(params[:bounds]) : Bench.all
-    debugger
     @benches = params[:filters] ? Bench.in_bounds(params[:filters]) : Bench.all
-    debugger
+
     render "api/benches/index"
   end
 

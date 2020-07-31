@@ -19,9 +19,9 @@ class BenchMap extends React.Component{
         this.MarkerManager = new MarkerManager(this.map);
         this.MarkerManager.updateMarkers(this.props.benches);
 
-        this.map.addListener(bounds_changed, function(){
+        // this.map.addListener(bounds_changed, function(){
 
-        });
+        // });
     }
 
     // filterBounds() {

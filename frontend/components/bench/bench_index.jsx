@@ -16,7 +16,6 @@ class BenchIndex extends React.Component {
     render() {
     
         const benchCount = Object.keys(this.props.benches).length;
-
         // const benches  = this.props.benches;
         // saved LI array form to display between UL tag 
         // so it makes it into bullet point format

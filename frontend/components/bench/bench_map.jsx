@@ -28,7 +28,7 @@ class BenchMap extends React.Component{
         this.map.addListener('idle', () => {
             let latLongBnds = this.map.getBounds();
             let northEastLat = latLongBnds.getNorthEast().lat();
-            let northEastLng = latLongBnds.getNorthEast().lng()
+            let northEastLng = latLongBnds.getNorthEast().lng();
             let southWestLat = latLongBnds.getSouthWest().lat();
             let southWestLng = latLongBnds.getSouthWest().lng();
             let bounds = { southWest: { lat: southWestLat, lng: southWestLng }, northEast: { lat: northEastLat, lng: northEastLng } };

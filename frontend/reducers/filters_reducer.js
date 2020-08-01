@@ -1,9 +1,10 @@
 import { UPDATE_BOUNDS } from '../actions/filter_actions';
 
-// const defaultFilters = Object.freeze({
-//     bounds: {}
-// });
-const filtersReducer = ( state = { bounds : {} }, action) => {
+const defaultFilters = Object.freeze({
+    bounds: {}
+});
+
+const filtersReducer = ( state = defaultFilters, action) => {
     Object.freeze(state);
     switch (action.type) {
         case UPDATE_BOUNDS:

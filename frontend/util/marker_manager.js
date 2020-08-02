@@ -7,13 +7,15 @@ export default class MarkerManager {
     }
 
     createMarkerFromBench(bench) {
-        new google.maps.Marker({
+        const marker = new google.maps.Marker({
             position: {lat: bench.lat , lng: bench.lng},
             map: this.map,
-            title: bench.description
-            });this.createMarkerFromBench
+            title: bench.description,
+            id: bench.id
+            });
+            // this.createMarkerFromBench
 
-            marker.addListner('click', () => this.handleClick(bench));
+            marker.addListener('click', () => this.handleClick(bench));
             this.markers[marker.benchId] = marker;
 
     }
@@ -24,7 +26,6 @@ export default class MarkerManager {
     }
 
     updateMarkers(benches) {
-        debugger
         const benchesObject = {};
         benches.forEach(bench => benchesObject[bench.id] = bench)
     

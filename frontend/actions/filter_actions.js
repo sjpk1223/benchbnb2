@@ -10,7 +10,6 @@ const changeBounds = (bounds) => {
 }
 
 export const updateBounds = (bounds) => (dispatch, getState) => {
-    debugger
         dispatch(changeBounds(bounds))
         return fetchBenches(getState().ui.filters)(dispatch);
 }

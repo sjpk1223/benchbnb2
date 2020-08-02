@@ -32,8 +32,7 @@ class BenchMap extends React.Component{
             let southWestLat = latLongBnds.getSouthWest().lat();
             let southWestLng = latLongBnds.getSouthWest().lng();
             let bounds = { southWest: { lat: southWestLat, lng: southWestLng }, northEast: { lat: northEastLat, lng: northEastLng } };
-            debugger
-            this.props.updateBounds('bounds', bounds);
+            this.props.updateBounds(bounds);
         })
     }
 

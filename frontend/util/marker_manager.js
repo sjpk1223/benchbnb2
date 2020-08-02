@@ -16,6 +16,11 @@ export default class MarkerManager {
 
     }
 
+    removeMarkers(marker){
+        this.markers[marker.benchId].setMap(null);
+        delete this.markers[marker.benchId]
+    }
+
     updateMarkers(benches) {
         const benchId = Object.keys(benches);
         benchId.forEach(id => {

@@ -5,7 +5,8 @@ import { updateBounds } from '../../actions/filter_actions';
 import  Search  from './search';
 
 const msp = (state) => ({
-    benches: state.entities.benches
+    // benches: state.entities.benches
+    benches: Object.values(state.entities.benches)
 });
 
 const mdp = (dispatch) => ({

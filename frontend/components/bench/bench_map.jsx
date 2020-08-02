@@ -4,7 +4,6 @@ import MarkerManager from '../../util/marker_manager';
 class BenchMap extends React.Component{
     constructor(props){
         super(props);
-        // this.updateBounds = this.props.updateBounds.bind(this);
     }
 
     componentDidMount() {
@@ -19,6 +18,7 @@ class BenchMap extends React.Component{
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);
         this.MarkerManager.updateMarkers(this.props.benches);
+        // Object.values(state.entities.benches)
         this.filterBounds();
         // idle b/c we want to capture bounds when map is idle NOT bounds changed 
         // this is where we get our bounds from our front end!
@@ -32,6 +32,7 @@ class BenchMap extends React.Component{
             let southWestLat = latLongBnds.getSouthWest().lat();
             let southWestLng = latLongBnds.getSouthWest().lng();
             let bounds = { southWest: { lat: southWestLat, lng: southWestLng }, northEast: { lat: northEastLat, lng: northEastLng } };
+            debugger
             this.props.updateBounds('bounds', bounds);
         })
     }

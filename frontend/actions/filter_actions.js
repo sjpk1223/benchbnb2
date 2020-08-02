@@ -1,7 +1,16 @@
-export const UPDATE_BOUNDS = "UPDATE_BOUNDS"
+export const UPDATE_BOUNDS = "UPDATE_BOUNDS";
+import {fetchBenches} from './benches_actions';
+import uiReducer from '../reducers/ui_reducer';
 
-export const updateBounds = (bounds) => ({
-    type: UPDATE_BOUNDS,
-    bounds
-})
+const changeBounds = (bounds) => {
+    return {
+        type: UPDATE_BOUNDS,
+        bounds 
+}
+}
 
+export const updateBounds = (bounds) => (dispatch, getState) => {
+    debugger
+        dispatch(changeBounds(bounds))
+        return fetchBenches(getState().ui.filters)(dispatch);
+}

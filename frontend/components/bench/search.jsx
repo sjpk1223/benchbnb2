@@ -12,7 +12,6 @@ class Search extends React.Component {
         let { fetchBenches, benches, updateBounds } = this.props;
         return (
             <div>
-                
                 <BenchMap benches={benches} updateBounds={updateBounds} />
                 <BenchIndex fetchBenches={fetchBenches} benches={benches} /> 
             </div>

@@ -10,5 +10,5 @@
     export const fetchBenches = (bounds) => dispatch => {
         return benchApiUtil.fetchBenches(bounds)
         .then(benches => dispatch(receiveBenches(benches)));
-    }
+    }   
 

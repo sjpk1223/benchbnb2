@@ -3,13 +3,19 @@ class Api::BenchesController < ApplicationController
     # @benches = bounds ? Bench.in_bounds(params[:bounds]) : Bench.all
     
     @benches = params[:bounds] ? Bench.in_bounds(params[:bounds]) : Bench.all
-
+    
     render "api/benches/index"
   end
 
   def create
     @bench = Bench.create!(benches_params)
     render "api/benches/show"
+  end
+
+  def show
+    # difference between find_by(needs key) & find
+    @bench = Bench.find_by(id: params[:id])
+    
   end
 
   private

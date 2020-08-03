@@ -1,1 +1,1 @@
-json.extract! bench, :lat, :lng, :description
+json.extract! bench, :id, :lat, :lng, :description

@@ -9,7 +9,7 @@ class Search extends React.Component {
     }
 
     render() {
-        let { fetchBenches, benches, updateBounds } = this.props;
+        let { benches, updateBounds } = this.props;
         return (
             <div>
                 <BenchMap benches={benches} updateBounds={updateBounds} />

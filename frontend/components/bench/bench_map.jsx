@@ -22,6 +22,7 @@ class BenchMap extends React.Component{
         this.filterBounds();
         // idle b/c we want to capture bounds when map is idle NOT bounds changed 
         // this is where we get our bounds from our front end!
+        debugger
     }
 
     filterBounds() {

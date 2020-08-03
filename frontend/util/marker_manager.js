@@ -16,7 +16,7 @@ export default class MarkerManager {
             // this.createMarkerFromBench
 
             marker.addListener('click', () => this.handleClick(bench));
-            this.markers[marker.benchId] = marker;
+            // this.markers[marker.benchId] = marker;
 
     }
 
@@ -35,11 +35,9 @@ export default class MarkerManager {
         //         this.createMarkerFromBench(bench, this.handleClick)
         //     }
         // }
-
         benches
         .filter(bench => !(this.markers[bench.id]))
         .forEach(bench => this.createMarkerFromBench(bench, this.handleClick))
-
         Object.values(this.markers)
         .filter(bench => !benchesObject[bench.id])
         .forEach(bench => this.removeMarkers(this.markers[bench.id]))

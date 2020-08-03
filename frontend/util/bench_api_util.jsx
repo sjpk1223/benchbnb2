@@ -7,13 +7,12 @@ export const fetchBenches = (bounds) => {
     })
 }
 
-// export const postBenches = (bench) => (
-//     $.ajax({
-//         method: 'POST',
-//         url: '/api/benches',
-//         data: {bench}
-//     })
-// )
-
+export const postBench = (bench) => (
+    $.ajax({
+        method: 'POST',
+        url: `/api/benches`,
+        data: {benchForm}
+    })
+)
 
 // let bounds = { northEast: { lat: '100', lng: '100' }, southWest: { lat: '-100', lng: '-100'}}

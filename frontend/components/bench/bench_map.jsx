@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 import MarkerManager from '../../util/marker_manager';
 
 class BenchMap extends React.Component{
@@ -50,4 +51,9 @@ class BenchMap extends React.Component{
     }
 }
 
-export default BenchMap;
+export default withRouter(BenchMap);
+
+// Since our BenchMap will need access to the Router, 
+// import the withRouter function from react-router-dom.
+// Change the export statement in bench_map.jsx so that we are 
+// exporting a wrapped component.

@@ -13,12 +13,23 @@ class BenchForm extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
     }   
 
-    handleSubmit(){
-        return null;
+    handleSubmit(e){
+        e.preventDefault(); // single page app so we need this to avoid error
+        const formData = new FormData();
+        formData.append('bench[description]', this.state.description);
+        formData.append('bench[seating]', this.state.seating);
+        formData.append('bench[lat]', this.state.lat);
+        formData.append('bench[lng]', this.state.lng);
+        this.props.createBench(formData);
+        this.props.history.push(`/`); // redirects to
+
+
     }
 
-    update(){
-        return null;
+    update(form){
+        return e => this.setState({
+            [form]: e.currentTarget.value 
+        })
     }
 
     render(){

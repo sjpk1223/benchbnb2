@@ -20,10 +20,13 @@ const App = () => (
             <AuthRoute path='/signup' component={SignupContainer} />
             <AuthRoute path='/login' component={LoginContainer} />
             <Route exact path='/' component={SearchContainer} />
-            <Route path='/benches/:benchId' component={BenchShowContainer} />
             <Route exact path='/benches/new' component={BenchFormContainer}/>
+            <Route path='/benches/:benchId' component={BenchShowContainer} />
         </Switch>
+        
     </div>
+    // when using switch function whichever component it hits first it will render so 
+    // order of routes matter!
 );
 
 export default App;

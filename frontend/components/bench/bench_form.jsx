@@ -11,8 +11,18 @@ class BenchForm extends React.Component{
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+    }   
+
+    handleSubmit(){
+        return null;
     }
+
+    update(){
+        return null;
+    }
+
     render(){
+        
         const { description, seating, lat, lng } = this.state;
         return (
             <div>

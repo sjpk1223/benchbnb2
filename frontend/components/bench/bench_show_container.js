@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import { fetchBench } from '../../actions/benches_actions';
+import { fetchBench } from '../../actions/benches_actions'; // must import from action file bc that is where we dispatch our util
 import BenchShow from './bench_show';
 
 // we need access to the URL to get the ID

@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
+// import {withRouter} from 'react-router-dom';
 import MarkerManager from '../../util/marker_manager';
 
 class BenchMap extends React.Component{
@@ -38,6 +38,13 @@ class BenchMap extends React.Component{
         })
     }
 
+    _handleClick(coords) {
+        this.props.history.push({
+            pathname: "benches/new",
+            search: `lat=${coords.lat}&lng=${coords.lng}`
+        });
+    }
+
     componentDidUpdate(){
         this.MarkerManager.updateMarkers(this.props.benches);
     };
@@ -51,7 +58,8 @@ class BenchMap extends React.Component{
     }
 }
 
-export default withRouter(BenchMap);
+// export default withRouter(BenchMap);
+export default BenchMap;
 
 // Since our BenchMap will need access to the Router, 
 // import the withRouter function from react-router-dom.

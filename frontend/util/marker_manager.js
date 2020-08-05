@@ -16,16 +16,20 @@ export default class MarkerManager {
             // this.createMarkerFromBench
 
             marker.addListener('click', () => this.handleClick(bench));
-            // this.markers[marker.benchId] = marker;
+            // const { position, title, id, map } = ;
+            this.markers[marker.id] = marker;
+            debugger
 
     }
 
     removeMarkers(marker){
-        this.markers[marker.benchId].setMap(null);
-        delete this.markers[marker.benchId];
+        debugger
+        this.markers[marker.id].setMap(null);
+        delete this.markers[marker.id];
     }
 
     updateMarkers(benches) {
+        
         const benchesObject = {};
         benches.forEach(bench => benchesObject[bench.id] = bench)
     
@@ -38,6 +42,8 @@ export default class MarkerManager {
         benches
         .filter(bench => !(this.markers[bench.id]))
         .forEach(bench => this.createMarkerFromBench(bench, this.handleClick))
+        // forEach on a empty array will not run the code
+        
         Object.values(this.markers)
         .filter(bench => !benchesObject[bench.id])
         .forEach(bench => this.removeMarkers(this.markers[bench.id]))

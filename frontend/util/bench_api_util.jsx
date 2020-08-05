@@ -3,7 +3,7 @@ export const fetchBenches = (bounds) => {
         method: 'GET' ,
         url: `/api/benches`,
         error: (err) => console.log(err),
-        data:  bounds // CANNOT PASS DATA IN BODY OF A GET REQUEST - ASK ERIC
+        data:  bounds
     })
 }
 

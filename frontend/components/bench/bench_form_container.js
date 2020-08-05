@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BenchForm from './bench_form';
-import { postBench } from '../../actions/benches_actions';
+import { postBench } from '../../util/bench_api_util';
 
 const msp = (state) => ({
     // description: state.,

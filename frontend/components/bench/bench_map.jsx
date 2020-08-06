@@ -23,7 +23,6 @@ class BenchMap extends React.Component{
         this.filterBounds();
         // idle b/c we want to capture bounds when map is idle NOT bounds changed 
         // this is where we get our bounds from our front end!
-        
     }
 
     filterBounds() {
@@ -43,6 +42,22 @@ class BenchMap extends React.Component{
             pathname: "benches/new",
             search: `lat=${coords.lat}&lng=${coords.lng}`
         });
+    }
+
+    registerListeners() {
+        google.maps.event.addListner(this.map, 'idle', () => {
+            const { north, south, east, west } = this.map.getBounds().toJSON();
+            const bounds = {
+                northEast: { lat:north, lng: east },
+                southWest: { lat:south, lng: west } 
+            }
+            this.props.updateFilter('bounds', bounds);
+        });
+
+        google.maps.event.addListner(this.map, 'click', (event) => {
+            const coords = getsCoordsObj(event.latLng);
+            this._handleClick(coords);
+        })
     }
 
     componentDidUpdate(){
@@ -65,3 +80,5 @@ export default BenchMap;
 // import the withRouter function from react-router-dom.
 // Change the export statement in bench_map.jsx so that we are 
 // exporting a wrapped component.
+
+// BenchMap component will now have a history(router) prop.

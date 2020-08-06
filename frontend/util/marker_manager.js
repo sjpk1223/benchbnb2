@@ -18,12 +18,11 @@ export default class MarkerManager {
             marker.addListener('click', () => this.handleClick(bench));
             // const { position, title, id, map } = ;
             this.markers[marker.id] = marker;
-            debugger
+
 
     }
 
     removeMarkers(marker){
-        debugger
         this.markers[marker.id].setMap(null);
         delete this.markers[marker.id];
     }

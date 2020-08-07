@@ -11,7 +11,7 @@ class BenchMap extends React.Component{
     constructor(props){
         super(props);
 
-        
+
         
     }
 
@@ -48,7 +48,6 @@ class BenchMap extends React.Component{
 
     handleClick(coords) {
         const {history} = this.props;
-        debugger
         history.push({
             pathname: "benches/new",
             search: `lat=${coords.lat}&lng=${coords.lng}`

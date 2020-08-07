@@ -13,28 +13,30 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
 );
 
 const mapStateToProps = state => {
+
     return { loggedIn: Boolean(state.session.currentUser) };
 };
 
-const Protected = ({ loggedIn, path, component: Component }) => {
+const Protected = ({ loggedIn, path, component: Component }) => (
     <Route 
     path={path}
-    render={props => {
-        loggedIn ? <Component {...props} /> : <Redirect to="signup"/> 
+    render={(props) => (
+        loggedIn ? <Component {...props} /> : <Redirect to="/login"/> 
 
-    }}
+    )}
     />
-}
+)
 // withRouter gives access to location, history and match?
 export const AuthRoute = withRouter(
-    connect(
-        mapStateToProps,
-        null
-    )(Auth)
+    connect
+        (mapStateToProps,
+        null)
+    (Auth)
 );
 
-// export const ProtectedRoute = withRouter(
-//     connect(
-//         (mapStateToProps)(Protected)
-//     )
-// );
+
+export const ProtectedRoute = withRouter(
+    connect
+        (mapStateToProps)(Protected)
+    
+);

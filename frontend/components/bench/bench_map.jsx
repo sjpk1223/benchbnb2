@@ -1,5 +1,5 @@
 import React from 'react';
-// import {withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import MarkerManager from '../../util/marker_manager';
 
 const getCoordsObj = latLng => ({
@@ -10,6 +10,9 @@ const getCoordsObj = latLng => ({
 class BenchMap extends React.Component{
     constructor(props){
         super(props);
+
+
+        
     }
 
     componentDidMount() {
@@ -39,11 +42,14 @@ class BenchMap extends React.Component{
             let southWestLng = latLongBnds.getSouthWest().lng();
             let bounds = { southWest: { lat: southWestLat, lng: southWestLng }, northEast: { lat: northEastLat, lng: northEastLng } };
             this.props.updateBounds(bounds);
+            this.registerListeners();
         })
     }
 
     handleClick(coords) {
-        this.props.history.push({
+        const {history} = this.props;
+        debugger
+        history.push({
             pathname: "benches/new",
             search: `lat=${coords.lat}&lng=${coords.lng}`
         });
@@ -63,7 +69,7 @@ class BenchMap extends React.Component{
         });
 
         google.maps.event.addListener(this.map, 'click', (event) => {
-            const coords = getsCoordsObj(event.latLng); // is defined in
+            const coords = getCoordsObj(event.latLng); 
             this.handleClick(coords);
         });
     }
@@ -81,8 +87,8 @@ class BenchMap extends React.Component{
     }
 }
 
-// export default withRouter(BenchMap);
-export default BenchMap;
+export default withRouter(BenchMap);
+// export default BenchMap;
 
 // Since our BenchMap will need access to the Router, 
 // import the withRouter function from react-router-dom.

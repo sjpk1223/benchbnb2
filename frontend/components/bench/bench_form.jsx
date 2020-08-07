@@ -3,6 +3,7 @@ import React from 'react';
 class BenchForm extends React.Component{
     constructor(props){
         super(props);
+        
         this.state = {
             description: '',
             seating: 0,
@@ -10,6 +11,7 @@ class BenchForm extends React.Component{
             lng: props.lng
         }
 
+        
         this.handleSubmit = this.handleSubmit.bind(this);
     }   
 
@@ -46,10 +48,10 @@ class BenchForm extends React.Component{
                 <input type="number" value={seating} onChange={this.update('seating')} />
 
                 <label>Latitude</label>
-                <input type="text" value={lat} />
+                <input type="text" value={lat} disabled />
 
                 <label>Longitude</label>
-                <input type="text" value={lng}/>
+                <input type="text" value={lng} disabled />
 
                 <input type="submit" value="Submit"/>
             </form>

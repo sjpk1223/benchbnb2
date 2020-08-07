@@ -29,3 +29,7 @@
         .then(bench => dispatch(receiveBench(bench)));
     }
 
+    export const postBench = (bench) => dispatch => {
+        return benchApiUtil.postBench(bench)
+        .then(bench => dispatch(receiveBench(bench)));
+    }

@@ -8,7 +8,8 @@ class Api::BenchesController < ApplicationController
   end
 
   def create
-    @bench = Bench.create!(benches_params)
+    debugger
+    @bench = Bench.create!(bench_params)
     render "api/benches/show"
   end
 
@@ -20,10 +21,10 @@ class Api::BenchesController < ApplicationController
 
   private
 
-  def benches_params
-    params.require(:benches).permit(:lat,
+  def bench_params
+    params.require(:bench).permit(:lat,
       :lng,
-      :description, :filters, :bounds, :seating)
+      :description, :seating)
   end
 
 end

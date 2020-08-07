@@ -1,16 +1,14 @@
 import { connect } from 'react-redux';
 import BenchForm from './bench_form';
-import { postBench } from '../../util/bench_api_util';
+import { postBench } from '../../actions/benches_actions'
 
-const msp = (state) => ({
-    // description: state.,
-    // seating:,
-    // lat:,
-    // lng:
-})
+const msp = (state, { location }) => ({
+    lat: new URLSearchParams(location.search).get("lat"),
+    lng: new URLSearchParams(location.search).get("lng")
+});
 
 const mdp = (dispatch) => ({
-    postBench: bench => dispatch(postBench(bench))
+    createBench: benchForm => dispatch(postBench(benchForm))
 })
 
 export default connect(msp,mdp)(BenchForm);

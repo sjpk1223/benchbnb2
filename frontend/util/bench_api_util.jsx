@@ -7,16 +7,17 @@ export const fetchBenches = (bounds) => {
     })
 }
 
-export const postBench = (bench) => (
+export const postBench = (benchForm) => (
     $.ajax({
         method: 'POST',
         url: `/api/benches`,
-        data: {benchForm}
+        data:  benchForm ,
+        processData: false,
+        contentType: false,
     })
 )
 
 export const fetchBench = (benchId) => {
-    
     return $.ajax({
         url: `/api/benches/${benchId}`
     })

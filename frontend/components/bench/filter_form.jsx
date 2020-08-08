@@ -1,17 +1,25 @@
 import React from 'react';
+// study parseInt
+const handleChange = (filter, updateFilter) => e => (
+    updateFilter(filter, parseInt(e.currentTarget.value))
+);
 
-const FilterForm = ({ minSeating, maxSeating }) => (
+const FilterForm = ({ min_seating, max_seating, updateFilter }) => (
     <div>
+        <span className="filter">Filter results:</span>
+        <br />
         <label>Minimum Seats</label>
         <input
             type="number"
-            value={minSeating}
+            value={min_seating}
+            onChange={handleChange('min_seating', updateFilter)}
         />
         <br />
         <label>Maximum Seats</label>
         <input
             type="number"
-            value={maxSeating}
+            value={max_seating}
+            onChange={handleChange('max_seating', updateFilter)}
         />
     </div>
 );

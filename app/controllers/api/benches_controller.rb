@@ -5,14 +5,13 @@ class Api::BenchesController < ApplicationController
     @benches = params[:bounds] ? Bench.in_bounds(params[:bounds]) : Bench.all
     
     if params[:min_seating] && params[:max_seating]
-      @benches = benches.where(seating: seating_range)
+      @benches = @benches.where(seating: seating_range)
     end
 
     render "api/benches/index"
   end
 
   def create
-    debugger
     @bench = Bench.create!(bench_params)
     render "api/benches/show"
   end

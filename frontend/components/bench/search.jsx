@@ -1,6 +1,7 @@
 import React from 'react';
 import BenchMap from './bench_map';
 import BenchIndex from './bench_index';
+import FilterForm from './filter_form';
 
 
 class Search extends React.Component {
@@ -9,10 +10,15 @@ class Search extends React.Component {
     }
 
     render() {
-        let { benches, updateBounds } = this.props;
+        let { benches, updateFilter, updateBounds, min_seating, max_seating } = this.props;
         return (
             <div>
-                <BenchMap benches={benches} updateBounds={updateBounds} />
+                <BenchMap benches={benches} updateBounds={updateBounds} updateFilter={updateFilter} />
+                <FilterForm
+                    min_seating={min_seating}
+                    max_seating={max_seating}
+                    updateFilter={updateFilter}
+                />
                 <BenchIndex benches={benches} /> 
             </div>
         )

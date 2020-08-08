@@ -43,16 +43,16 @@ class BenchForm extends React.Component{
             <form onSubmit={this.handleSubmit}>
                 <label>Description</label>
                 <input type="text" value={description} onChange={this.update('description')}/>
-
+                    <br />
                 <label>Seating</label>
                 <input type="number" value={seating} onChange={this.update('seating')} />
-
+                    <br />
                 <label>Latitude</label>
                 <input type="text" value={lat} disabled />
-
+                    <br />
                 <label>Longitude</label>
                 <input type="text" value={lng} disabled />
-
+                    <br />
                 <input type="submit" value="Submit"/>
             </form>
 

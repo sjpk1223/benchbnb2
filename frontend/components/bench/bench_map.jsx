@@ -26,9 +26,16 @@ class BenchMap extends React.Component{
         // wrap this.mapNode in a Google Map
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);
-        this.MarkerManager.updateMarkers(this.props.benches);
         // Object.values(state.entities.benches)
-        this.filterBounds();
+        
+        if (this.props.singleBench){
+            
+            // this.props.fetchBench(this.props.match.params.benchId);
+            this.MarkerManager.updateMarkers([this.props.bench]); // updateMarkers takes in an array
+        }   else {
+            this.MarkerManager.updateMarkers(this.props.benches);
+            this.filterBounds();
+        }
         // idle b/c we want to capture bounds when map is idle NOT bounds changed 
         // this is where we get our bounds from our front end!
     }
@@ -74,7 +81,11 @@ class BenchMap extends React.Component{
     }
 
     componentDidUpdate(){
-        this.MarkerManager.updateMarkers(this.props.benches);
+        if (this.props.singleBench) {
+            this.MarkerManager.updateMarkers([this.props.bench]); // updateMarkers takes in an array
+        } else {
+            this.MarkerManager.updateMarkers(this.props.benches);
+        }
     };
 
     render() {

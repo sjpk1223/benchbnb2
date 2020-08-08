@@ -9,17 +9,24 @@ class Search extends React.Component {
         super(props);
     }
 
+ 
+
     render() {
         let { benches, updateFilter, min_seating, max_seating } = this.props;
         return (
             <div>
-                <BenchMap benches={benches} updateFilter={updateFilter} />
+                <BenchMap 
+                    benches={benches} 
+                    updateFilter={updateFilter} 
+                    />
                 <FilterForm
                     min_seating={min_seating}
                     max_seating={max_seating}
                     updateFilter={updateFilter}
                 />
-                <BenchIndex benches={benches} /> 
+                <BenchIndex 
+                    benches={benches} 
+                    /> 
             </div>
         )
     }

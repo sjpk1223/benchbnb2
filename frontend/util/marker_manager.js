@@ -30,6 +30,8 @@ export default class MarkerManager {
     updateMarkers(benches) {
         
         const benchesObject = {};
+        // benches = benches[0] ? benches : [];
+    
         benches.forEach(bench => benchesObject[bench.id] = bench)
     
         // for (bench in benches){

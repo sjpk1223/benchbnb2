@@ -1,10 +1,11 @@
 export const UPDATE_BOUNDS = "UPDATE_BOUNDS";
 import {fetchBenches} from './benches_actions';
 
-const changeBounds = (bounds) => {
+const changeBounds = (bounds, value) => {
     return {
         type: UPDATE_BOUNDS,
-        bounds 
+        bounds,
+        value
 }
 }
 

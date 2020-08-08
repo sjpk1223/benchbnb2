@@ -41,7 +41,7 @@ class BenchMap extends React.Component{
             let southWestLat = latLongBnds.getSouthWest().lat();
             let southWestLng = latLongBnds.getSouthWest().lng();
             let bounds = { southWest: { lat: southWestLat, lng: southWestLng }, northEast: { lat: northEastLat, lng: northEastLng } };
-            this.props.updateBounds(bounds);
+            this.props.updateFilter('bounds', bounds);
             this.registerListeners();
         })
     }
@@ -64,7 +64,7 @@ class BenchMap extends React.Component{
                 northEast: { lat:north, lng: east },
                 southWest: { lat:south, lng: west } 
             };
-            this.props.updateBounds(bounds);
+            this.props.updateFilter('bounds', bounds);
         });
 
         google.maps.event.addListener(this.map, 'click', (event) => {

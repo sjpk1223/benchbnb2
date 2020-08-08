@@ -1,7 +1,5 @@
 import { connect } from 'react-redux';
 import { fetchBenches, updateFilter } from '../../actions/benches_actions';
-import { updateBounds } from '../../actions/filter_actions';
-
 import  Search  from './search';
 
 // const msp = (state) => ({
@@ -22,7 +20,7 @@ const msp = (state) => {
 
 const mdp = (dispatch) => ({
     fetchBenches: (bounds) => dispatch(fetchBenches(bounds)),
-    updateBounds: (bounds) => dispatch(updateBounds(bounds)),
+    // updateBounds: (bounds) => dispatch(updateBounds(bounds)),
     updateFilter: (filter, value) => dispatch(updateFilter(filter,value))
 });
 

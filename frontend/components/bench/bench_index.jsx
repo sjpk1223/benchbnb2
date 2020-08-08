@@ -9,9 +9,6 @@ class BenchIndex extends React.Component {
 
 
     }
-    // componentDidMount() {
-    //     this.props.updateBounds();
-    // }
 
     render() {
     

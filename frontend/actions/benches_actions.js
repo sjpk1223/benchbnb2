@@ -2,7 +2,8 @@
 
     export const RECEIVE_BENCHES = "RECEIVE_BENCHES"; // to avoid typos in reducer
     export const RECEIVE_BENCH = "RECEIVE_BENCH";
-    export const UPDATE_FILTER = "UPDATE_FILTER"
+    export const UPDATE_FILTER = "UPDATE_FILTER";
+    export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
     // action creator creates an object that will be dispatched to the reducer
 
     const receiveBenches = (benches) => ({
@@ -15,6 +16,19 @@
         type: RECEIVE_BENCH,
         bench: bench
     })
+
+    export const receiveReview = ({ rating, comment, author }) => ({
+        type: RECEIVE_BENCH,
+        rating,
+        comment,
+        author
+    })
+
+    export const createReview = review => dispatch => (
+        APIUtil.createReview(review).then(review => (
+        dispatch(receiveReview(review))
+    ))
+    );
 
     // calls an ajax request which returns a promise object 
     export const fetchBenches = (bounds) => dispatch => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import BenchMap from '../bench/bench_map';
+import BenchMap from '../bench_map/bench_map';
 import { fetchBench } from '../../util/bench_api_util';
 
 class BenchShow extends React.Component {
